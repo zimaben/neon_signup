@@ -78,10 +78,12 @@ function neonid_signup_submit(){
 		 	resp.innerHTML = '';
 		 	if(request.response.type == "success"){
 		 	  resp.innerHTML = request.response.message;
+		 	  setTimeout(function(){resp.innerHTML = ''; },1000);
 		 	} else {
 		 	  if(neonid_signup.debug == '1'){
 			 	  if(typeof request.response.message !== 'undefined'){
 			 	  	    resp.innerHTML = request.response.message;
+			 	  	    setTimeout(function(){resp.innerHTML = ''; },1000);
 			 	  		console.log( request.response.message);
 			 	  	} else { resp.innerHTML = '<p class="error"There was a problem adding your email.</p>'; console.log( 'No AJAX response from neonid_signup.')}
 			 	}
@@ -95,6 +97,7 @@ function neonid_signup_submit(){
 
 	} else {
 	 	resp.innerHTML = '<p class="error">Please enter a valid email address.</p>';
+	 	setTimeout(function(){resp.innerHTML = ''; },1000);
 	 	console.log( resp.innerHTML );
 	}
 }
