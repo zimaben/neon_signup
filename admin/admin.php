@@ -36,7 +36,7 @@ function neon_early_signup() {
 		}
 
 		if( $user_id ){
-			$header('Content-Type: text/html; charset=utf-8'); 
+			$header = 'Content-Type: text/html; charset=utf-8'; 
 			$subject = 'New NEONID early signup request';
 			$body = $the_email .' wants access to NEONID! The email has been saved in our database.';
 			wp_mail( $destination_email, $subject, $body, $header );
